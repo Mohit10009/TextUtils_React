@@ -40,14 +40,13 @@ export default function TextForm(props) {
     setText(event.target.value);
   };
   
-  const handleCopyClick = () => {
-    let text = document.getElementById("myBox");
-    text.select();
-    text.setSelectionRange(0, 99999);
-    navigator.clipboard.writtenText(text.value);
-    props.showAlert("Copied to Clipboard!", "success" );
-
-  };
+  // const handleCopyClick = () => {
+  //   let text = document.getElementById("myBox");
+  //   text.select();
+  //   text.setSelectionRange(0, 99999);
+  //   navigator.clipboard.writtenText(text.value);
+  //   props.showAlert("Copied to Clipboard!", "success" );
+  // };
 
   const handleExtraSpaces = () => {
     let newText = text.split(/[ ]+/);
@@ -76,7 +75,7 @@ export default function TextForm(props) {
         <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handlelowClick}> Convert to lowercase </button>
         <button disabled={text.length===0} className="btn btn-primary mx-2 " onClick={handleClearClick}> Clear Text  </button>
         {/* <button className="btn btn-primary mx-2" onClick={handleTrimClick}> Trim </button> */}
-        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopyClick}> Copy Text </button>
+        {/* <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopyClick}> Copy Text </button> */}
         <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleExtraSpaces}> Remove Extra Spaces </button>
         <button disabled={text.length===0} type="submit" onClick={speak} className="btn btn-warning mx-2 my-2"> Speak </button>
       </div>
