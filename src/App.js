@@ -72,6 +72,7 @@ function App() {
 <Alert alert={alert}/>
 <div className="container my-3">
 <Switch>
+  {/* we use exact here because react does partial matching  */}
           <Route exact path="/about">
           <About  mode={mode} />
           </Route>
